@@ -28,6 +28,8 @@ CONFIG      *= link_pkgconfig
 PKGCONFIG   *= opencv4
 PKGCONFIG   *= zcm
 
-INCLUDEPATH += /videos/data/113_last/20190808/zcm_types \
-               /videos/data/113_last/20190808/zcm_types/service/cpp_types
+#INCLUDEPATH += /videos/data/113_last/20190808/zcm_types/service/cpp_types
 # zcm_types/camera_basler/cpp_types 
+
+INCLUDEPATH += zcm_types/camera_basler/cpp_types \
+               zcm_types/service/cpp_types

@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../../zcm2video -I. -I/videos/data/113_last/20190808/zcm_types -I/videos/data/113_last/20190808/zcm_types/service/cpp_types -isystem /usr/local/include/opencv4/opencv -isystem /usr/local/include/opencv4 -isystem /usr/local/include -I../../Qt/5.12.4/gcc_64/include -I../../Qt/5.12.4/gcc_64/include/QtCore -I. -I../../Qt/5.12.4/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../../zcm2video -I. -I../zcm_types/camera_basler/cpp_types -I../zcm_types/service/cpp_types -isystem /usr/local/include/opencv4/opencv -isystem /usr/local/include/opencv4 -isystem /usr/local/include -I../../Qt/5.12.4/gcc_64/include -I../../Qt/5.12.4/gcc_64/include/QtCore -I. -I../../Qt/5.12.4/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/roman/Qt/5.12.4/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -712,10 +712,10 @@ compiler_clean: compiler_moc_predefs_clean
 ####### Compile
 
 main.o: ../main.cpp ../videoParser.cpp \
-		/videos/data/113_last/20190808/zcm_types/camera_basler/cpp_types/ZcmCameraBaslerJpegFrame.hpp \
-		/videos/data/113_last/20190808/zcm_types/camera_basler/cpp_types/ZcmCameraBaslerInformation.hpp \
-		/videos/data/113_last/20190808/zcm_types/camera_basler/cpp_types/ZcmCameraCalibratingParams.hpp \
-		/videos/data/113_last/20190808/zcm_types/service/cpp_types/ZcmService.hpp
+		../zcm_types/camera_basler/cpp_types/ZcmCameraBaslerJpegFrame.hpp \
+		../zcm_types/camera_basler/cpp_types/ZcmCameraBaslerInformation.hpp \
+		../zcm_types/camera_basler/cpp_types/ZcmCameraCalibratingParams.hpp \
+		../zcm_types/service/cpp_types/ZcmService.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 ####### Install

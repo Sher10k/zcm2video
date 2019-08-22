@@ -1,14 +1,13 @@
 #include <utility>
-
 #include <vector>
 #include <iostream>
 #include <zcm/zcm-cpp.hpp>
 #include <set>
 #include <iterator>
-#include "/videos/data/113_last/20190808/zcm_types/camera_basler/cpp_types/ZcmCameraBaslerJpegFrame.hpp"
-
 #include <opencv2/core.hpp>        // Basic OpenCV structures (cv::Mat)
 #include <opencv2//highgui.hpp>  // Video write
+
+#include "ZcmCameraBaslerJpegFrame.hpp"
 
 class VideoParser {
     
@@ -41,7 +40,7 @@ public:
             const zcm::LogEvent* event = zcm_log_->readNextEvent();
             if (!event)
                 break;
-            if (event->channel == "SLZcmCameraBaslerJpegFrame") //FLZcmCameraBaslerJpegFrame
+            if (event->channel == "FRZcmCameraBaslerJpegFrame") //FLZcmCameraBaslerJpegFrame	SLZcmCameraBaslerJpegFrame
             {
                 ZcmCameraBaslerJpegFrame zcm_msg;
                 zcm_msg.decode( event->data, 0, static_cast< unsigned >(event->datalen) );
