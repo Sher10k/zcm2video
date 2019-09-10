@@ -15,19 +15,21 @@ private:
     cv::Mat img_;
     zcm::LogFile *zcm_log_;
     std::string output_filename_;
+    std::string param_;
+    bool list_;
     
 public:
-    VideoParser(const std::string & input_filename, std::string  output_filename)
-        : output_filename_{std::move(output_filename)}
+    VideoParser( const std::string & input_filename, std::string  output_filename, std::string  param, bool list )
+        : output_filename_{std::move(output_filename)}, param_{std::move(param)}, list_{std::move(list)}
     {
         zcm_log_ = new zcm::LogFile(input_filename, "r");
-        if (!zcm_log_->good())
+        if ( !zcm_log_->good() )
         {
             std::cout << "Bad zcm log: " << input_filename << std::endl;
             exit(0);
         }
     }
-
+    
     void Run()
     {
         int codec = cv::VideoWriter::fourcc('X', '2', '6', '4');
@@ -40,15 +42,15 @@ public:
             const zcm::LogEvent* event = zcm_log_->readNextEvent();
             if (!event)
                 break;
-            if (event->channel == "FRZcmCameraBaslerJpegFrame") //FLZcmCameraBaslerJpegFrame	SLZcmCameraBaslerJpegFrame
+            if ( (event->channel == param_) && ( !list_ ) ) //FLZcmCameraBaslerJpegFrame	SLZcmCameraBaslerJpegFrame
             {
                 ZcmCameraBaslerJpegFrame zcm_msg;
                 zcm_msg.decode( event->data, 0, static_cast< unsigned >(event->datalen) );
                 img_ = cv::imdecode(zcm_msg.jpeg, cv::IMREAD_COLOR);
-                if (first_time)
+                if ( first_time )
                 {
-                    bool isColor = (img_.type() == CV_8UC3);
-                    writer.open(output_filename_, codec, 8, img_.size(), isColor);
+                    bool isColor = ( img_.type() == CV_8UC3 );
+                    writer.open( output_filename_, codec, 8, img_.size(), isColor );
                     if (!writer.isOpened()) {
                         std::cout << "Could not open the output video file for write!" << std::endl;
                         exit(0);
@@ -64,6 +66,6 @@ public:
             std::cout << "\t" << i << std::endl;
 
         writer.release();
-        std::cout << "Finished writing" << std::endl;
+        if ( !list_ ) std::cout << "Finished writing" << std::endl;
     }
 };

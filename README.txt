@@ -1,5 +1,5 @@
-Qt Creator 4.9.2
-Qt 5.12.4
+Qt Creator 4.10.0
+Qt 5.13.1
 GCC 5.3.1
 
 Скопировать папки:
@@ -13,3 +13,45 @@ GCC 5.3.1
 
 для преобразования запустить следующее:
     ./zcm2video -i <путь к zcm логу> -o <путь к полученному файлу (результат работы)>
+
+zcm log parameters:
+    Lastochka:
+        	FLLidarSickScanData
+            FRLidarSickScanData
+            LLZcmCameraBaslerJpegFrame
+            RailsSegmentation
+            RailsSegmentationLong
+            SLZcmCameraBaslerJpegFrame
+            SRZcmCameraBaslerJpegFrame
+            ZcmDisparityMap
+            human_mask
+            long_mono_obstacles
+        	short_stereo_obstacles
+    Loco:
+        	BLidarLuxScanData
+	        BRZcmCameraBaslerJpegFrame
+	        BZcmFusionPredictedObstacle
+	        BZcmLidarClustersList
+	        BZcmLidarDataFusion
+	        BZcmNeuralObstacles
+	        FLRailDetection
+	        FLZcmCameraBaslerJpegFrame
+	        FLZcmTrackDetectTracksMask
+	        FLidarScalaScanData
+	        FRZcmCameraBaslerJpegFrame
+	        FZcmFusionPredictedObstacle
+	        FZcmLidarClustersList
+	        FZcmLidarDataFusion
+	        FZcmNeuralObstacles
+	        ZcmAccFXOS8700
+	        ZcmNavFilter
+	        ZcmNavNV08CNavGw
+	        ZcmSauglBrakeDiagnostics
+	        ZcmSauglDiagnostics
+	        ZcmSauglMssduInfo
+	        ZcmSauglMssduInfoAck
+	        ZcmSauglMssduTimestamp
+	        ZcmSauglOduInfoAck
+	        ZcmSauglState
+
+
