@@ -63,7 +63,7 @@ struct Args
                   << "    and get list zcm event parametrs" << std::endl
                   << "" << std::endl
                   << "Example:" << std::endl
-                  << "    ./zcm2video -i zcm.log -o vid.avi " << std::endl
+                  << "    ./zcm2video -i zcm.log -o vid.avi -p <name_param>" << std::endl
                   << "" << std::endl
                   << "And view list parametrs: " << std::endl
                   << "    ./zcm2video -i zcm.log -l " << std::endl

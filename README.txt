@@ -17,15 +17,15 @@ GCC 5.3.1
 zcm log parameters:
     Lastochka:
         	FLLidarSickScanData
-            FRLidarSickScanData
-            LLZcmCameraBaslerJpegFrame
-            RailsSegmentation
-            RailsSegmentationLong
-            SLZcmCameraBaslerJpegFrame
-            SRZcmCameraBaslerJpegFrame
-            ZcmDisparityMap
-            human_mask
-            long_mono_obstacles
+        	FRLidarSickScanData
+        	LLZcmCameraBaslerJpegFrame
+        	RailsSegmentation
+        	RailsSegmentationLong
+        	SLZcmCameraBaslerJpegFrame
+        	SRZcmCameraBaslerJpegFrame
+        	ZcmDisparityMap
+        	human_mask
+        	long_mono_obstacles
         	short_stereo_obstacles
     Loco:
         	BLidarLuxScanData
