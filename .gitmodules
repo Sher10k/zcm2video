@@ -1,0 +1,3 @@
+[submodule "external/zcm_types"]
+	path = external/zcm_types
+	url = ssh://git@bb.niias:7999/~r.sukhanov/zcm_types.git
